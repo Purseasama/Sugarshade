@@ -42,9 +42,9 @@ cake_specification = st.text_input("บรีฟอื่นๆ(หากมี)
 candle_type = st.radio("เทียน(แท่งละ 10บาท):", ["เทียนเกลียว", "เทียนสั้นสีชมพู", "ไม่รับเทียน"])
 
 if candle_type == "เทียนเกลียว":
-    num_candles = st.slider("Select the number of เทียนเกลียว you want:", min_value=1, max_value=10, value=1)
+    num_candles = st.slider("จำนวน (แท่ง):", min_value=1, max_value=10, value=1)
 elif candle_type == "เทียนสั้นสีชมพู":
-    num_candles = st.slider("Select the number of เทียนสั้นสีชมพู you want:", min_value=1, max_value=10, value=1)
+    num_candles = st.slider("จำนวน (แท่ง):", min_value=1, max_value=10, value=1)
 else:
     num_candles = 0
     st.write("ไม่รับเทียน")
