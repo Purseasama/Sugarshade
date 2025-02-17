@@ -4,7 +4,7 @@ import os
 import requests
 
 # LINE Notify Token (Replace with your actual token)
-LINE_NOTIFY_TOKEN = "gF2wiELf5fMoOnRdTMud8dJ0xpMrh3mo7oPevPifUVB"
+LINE_NOTIFY_TOKEN = "cFNP09HM6p72xrzSbqeiTrXHN81WYfbL1d8Spjp3Izi"
 
 def send_line_notification(message):
     """Send order notification to LINE Notify."""
@@ -119,7 +119,7 @@ if st.button("ยืนยันออเดอร์"):
             - **บรีฟอื่นๆ:** {cake_specification}
 
             **🕯️เทียน**
-            - **เทียน:** {candle_type} {num_candles} **แท่ง**
+            - **เทียน:** {candle_type} {num_candles} แท่ง
 
             **🚗ข้อมูลการจัดส่ง**
             - **วันรับเค้ก:** {delivery_date}
@@ -142,9 +142,9 @@ if st.button("ยืนยันออเดอร์"):
     -บรีฟอื่นๆ: {cake_specification}
 
 🕯️เทียน
-    -เทียน: {candle_type} {num_candles} **แท่ง**
+    -เทียน: {candle_type} {num_candles} แท่ง
 
-🚗ข้อมูลการจัดส่ง**
+🚗ข้อมูลการจัดส่ง
     -วันรับเค้ก:{delivery_date}
     -เวลา: {delivery_time}
     -วิธีจัดส่ง: {delivery_option}
