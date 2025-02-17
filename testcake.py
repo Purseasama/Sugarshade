@@ -42,10 +42,11 @@ cake_specification = st.text_input("บรีฟอื่นๆ(หากมี)
 candle_type = st.radio("เทียน(แท่งละ 10บาท):", ["เทียนเกลียว", "เทียนสั้นสีชมพู", "ไม่รับเทียน"])
 
 if candle_type == "เทียนเกลียว":
-    num_candles = st.slider("Select the number of เทียนเกลียว you want:", min_value=0, max_value=10, value=0)
+    num_candles = st.slider("Select the number of เทียนเกลียว you want:", min_value=1, max_value=10, value=1)
 elif candle_type == "เทียนสั้นสีชมพู":
-    num_candles = st.slider("Select the number of เทียนสั้นสีชมพู you want:", min_value=0, max_value=10, value=0)
+    num_candles = st.slider("Select the number of เทียนสั้นสีชมพู you want:", min_value=1, max_value=10, value=1)
 else:
+    num_candles = 0
     st.write("ไม่รับเทียน")
 
 # Delivery details
@@ -117,7 +118,7 @@ if st.button("ยืนยันออเดอร์"):
             - **บรีฟอื่นๆ:** {cake_specification}
 
             **🕯️เทียน**
-            - **เทียน:** {candle_type}
+            - **เทียน:** {candle_type} {num_candles} **แท่ง**
 
             **🚗ข้อมูลการจัดส่ง**
             - **วันรับเค้ก:** {delivery_date}
@@ -140,7 +141,7 @@ if st.button("ยืนยันออเดอร์"):
     -บรีฟอื่นๆ: {cake_specification}
 
 🕯️เทียน
-    -เทียน: {candle_type}
+    -เทียน: {candle_type} {num_candles} **แท่ง**
 
 🚗ข้อมูลการจัดส่ง**
     -วันรับเค้ก:{delivery_date}
@@ -154,6 +155,7 @@ if st.button("ยืนยันออเดอร์"):
 
             # Show Order Summary Immediately
             st.subheader("📋 สรุปออเดอร์ K.{customer_name}")
+            st.write(order_summary)
 
         except Exception as e:
             st.error(f"⚠️ Error saving order: {e}")
