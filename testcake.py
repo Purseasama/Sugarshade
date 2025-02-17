@@ -154,7 +154,7 @@ if st.button("ยืนยันออเดอร์"):
             send_line_notification(order_summaryforLINE)
 
             # Show Order Summary Immediately
-            st.subheader("📋 สรุปออเดอร์ K.{customer_name}")
+            st.subheader("📋 สรุปออเดอร์")
             st.write(order_summary)
 
         except Exception as e:
